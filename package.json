@@ -27,7 +27,7 @@
     "url": "git+https://github.com/FujiHaruka/issue-refs-parser-action.git"
   },
   "scripts": {
-    "build": "ncc build src/index.js --license licenses.txt",
+    "build": "ncc build src/index.js --license licenses.txt --minify",
     "format": "prettier --write src test",
     "test": "mocha"
   }
