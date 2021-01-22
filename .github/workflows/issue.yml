@@ -17,5 +17,6 @@ jobs:
           self_slug: "FujiHaruka/issue-refs-parser-action"
       - name: Get The Outputs
         run: |
+          echo "body: ${{ github.event.issue.comment.body }}"
           echo "refs: ${{ steps.action.outputs.refs }}"
           echo "external_refs: ${{ steps.action.outputs.external_refs }}"
