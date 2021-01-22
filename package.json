@@ -1,32 +1,34 @@
 {
   "name": "issue-refs-parser-action",
-  "version": "1.0.0",
-  "private": true,
   "description": "GitHub Action to parse linked references from a string such as a issue or pull request body.",
-  "scripts": {
-    "test": "mocha",
-    "format": "prettier --write src test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FujiHaruka/issue-refs-parser-action.git"
-  },
-  "keywords": [
-    "GitHub",
-    "Actions"
-  ],
+  "version": "1.0.0",
   "author": "FujiHaruka",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FujiHaruka/issue-refs-parser-action/issues"
   },
-  "homepage": "https://github.com/FujiHaruka/issue-refs-parser-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "issue-parser": "^6.0.0"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
     "mocha": "^8.2.1",
     "prettier": "^2.2.1"
+  },
+  "homepage": "https://github.com/FujiHaruka/issue-refs-parser-action#readme",
+  "keywords": [
+    "Actions",
+    "GitHub"
+  ],
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FujiHaruka/issue-refs-parser-action.git"
+  },
+  "scripts": {
+    "build": "ncc build src/index.js --license licenses.txt",
+    "format": "prettier --write src test",
+    "test": "mocha"
   }
 }
