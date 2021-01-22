@@ -1,0 +1,23 @@
+{
+  "name": "issue-refs-parser-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Action to parse linked references from a string such as a issue or pull request body.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FujiHaruka/issue-refs-parser-action.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions"
+  ],
+  "author": "FujiHaruka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FujiHaruka/issue-refs-parser-action/issues"
+  },
+  "homepage": "https://github.com/FujiHaruka/issue-refs-parser-action#readme"
+}

@@ -1,0 +1,26 @@
+name: "Issue Refs Parser"
+description: "Parse linked references from a string such as a issue or pull request body."
+author: "FujiHaruka"
+inputs:
+  body:
+    description: "Raw input string to be parsed"
+    required: true
+  selfSlug:
+    description: "Slug string of the repository where the action runs"
+outputs:
+  refs:
+    description: "Referenced issue numbers in the same repository"
+  external_refs:
+    description: "Referenced issue refs in different repositories"
+  actions:
+    description: "Referenced issue numbers with actions in the same repository"
+  external_actions:
+    description: "Referenced issue refs with actions in different repositories"
+  mentions:
+    description: "Mentioned users"
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: "hash"
+  color: "white"
