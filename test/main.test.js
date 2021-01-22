@@ -7,6 +7,7 @@ it("parses", () => {
   const outputs = main({
     body: `
 #1
+#1
 Fixes #2
 octocat/Hello-World#3
 octocat/Spoon-Knife#4
