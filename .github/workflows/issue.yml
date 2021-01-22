@@ -1,0 +1,21 @@
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  parse-comment:
+    runs-on: ubuntu-latest
+    name: Parse Comment
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Issue Refs Parser Action
+        uses: ./
+        id: action
+        with:
+          body: ${{ github.event.issue.comment.body }}
+          self_slug: "FujiHaruka/issue-refs-parser-action"
+      - name: Get The Outputs
+        run: |
+          echo "refs: ${{ steps.action.outputs.refs }}"
+          echo "external_refs: ${{ steps.action.outputs.external_refs }}"
