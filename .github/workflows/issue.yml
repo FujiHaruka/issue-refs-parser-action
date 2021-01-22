@@ -9,10 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Dump Event
-        env:
-          GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: echo "$GITHUB_EVENT"
       - name: Issue Refs Parser Action
         uses: ./
         id: action
