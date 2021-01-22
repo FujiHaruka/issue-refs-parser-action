@@ -5,7 +5,7 @@ inputs:
   body:
     description: "Raw input string to be parsed"
     required: true
-  selfSlug:
+  self_slug:
     description: "Slug string of the repository where the action runs"
 outputs:
   refs:

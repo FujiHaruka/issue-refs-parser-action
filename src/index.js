@@ -5,7 +5,7 @@ const main = require("./main");
 
 const outputs = main({
   body: core.getInput("body"),
-  slug: core.getInput("selfSlug"),
+  slug: core.getInput("self_slug"),
 });
 for (const { key, value } of outputs) {
   core.setOutput(key, value.join(","));

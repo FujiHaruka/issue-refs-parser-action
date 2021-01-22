@@ -3904,7 +3904,7 @@ const main = __nccwpck_require__(713);
 
 const outputs = main({
   body: core.getInput("body"),
-  slug: core.getInput("selfSlug"),
+  slug: core.getInput("self_slug"),
 });
 for (const { key, value } of outputs) {
   core.setOutput(key, value.join(","));

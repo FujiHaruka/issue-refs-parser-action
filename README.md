@@ -10,7 +10,7 @@ This action simply uses [issue-parser](https://www.npmjs.com/package/issue-parse
 
 **Required**. Raw input string to be parsed. It is intended to be a string such as a issue body, a pull request body or a its comment.
 
-### `selfSlug`
+### `self_slug`
 
 Optional. Slug string of the repository where the action runs. The format is `"owner/repo"`.
 It teaches the action which reference or URL is to the same repository.
