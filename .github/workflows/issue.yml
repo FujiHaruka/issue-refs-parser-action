@@ -13,10 +13,10 @@ jobs:
         uses: ./
         id: action
         with:
-          body: ${{ github.event.issue.comment.body }}
+          body: ${{ github.event.issue_comment.comment.body }}
           self_slug: "FujiHaruka/issue-refs-parser-action"
       - name: Get The Outputs
         run: |
-          echo "body: ${{ github.event.issue.comment.body }}"
+          echo "body: ${{ github.event.issue_comment.comment.body }}"
           echo "refs: ${{ steps.action.outputs.refs }}"
           echo "external_refs: ${{ steps.action.outputs.external_refs }}"
