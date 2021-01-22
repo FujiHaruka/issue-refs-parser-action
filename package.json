@@ -4,7 +4,8 @@
   "private": true,
   "description": "GitHub Action to parse linked references from a string such as a issue or pull request body.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "format": "prettier --write src test"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/FujiHaruka/issue-refs-parser-action/issues"
   },
-  "homepage": "https://github.com/FujiHaruka/issue-refs-parser-action#readme"
+  "homepage": "https://github.com/FujiHaruka/issue-refs-parser-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "issue-parser": "^6.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.1"
+  }
 }

@@ -27,18 +27,6 @@ Referenced issue numbers in the same repository.
 
 Referenced issue refs in different repositories.
 
-### `actions`
-
-Referenced issue numbers with actions in the same repository.
-
-### `external_actions`
-
-Referenced issue refs with actions in different repositories.
-
-### `mentions`
-
-Mentioned users.
-
 ## Example Usage
 
 TODO:
