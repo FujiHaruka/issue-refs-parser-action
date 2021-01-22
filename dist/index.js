@@ -3920,27 +3920,56 @@ for (const { key, value } of outputs) {
 
 
 const issueParser = __nccwpck_require__(877);
+const { EnhancedArray } = __nccwpck_require__(254);
 const parse = issueParser("github");
 
 const main = ({ body, slug }) => {
   const parsed = parse(body);
   const isSameRepository = (ref) => !ref.slug || ref.slug === slug;
+  const toExternalRef = (ref) => `${ref.slug}#${ref.issue}`;
+  const refs = EnhancedArray.from(parsed.refs);
   const outputs = [
     {
       key: "refs",
-      value: parsed.refs.filter(isSameRepository).map((ref) => ref.issue),
+      value: refs
+        .filter(isSameRepository)
+        .map((ref) => ref.issue)
+        .unique()
+        .array(),
     },
     {
       key: "external_refs",
-      value: parsed.refs
+      value: refs
         .filter((ref) => !isSameRepository(ref))
-        .map((ref) => `${ref.slug}#${ref.issue}`),
+        .map(toExternalRef)
+        .unique()
+        .array(),
     },
   ];
   return outputs;
 };
 
 module.exports = main;
+
+
+/***/ }),
+
+/***/ 254:
+/***/ ((module) => {
+
+class EnhancedArray extends Array {
+  unique() {
+    return EnhancedArray.from(new Set(this));
+  }
+
+  array() {
+    return Array.from(this);
+  }
+}
+
+module.exports = {
+  EnhancedArray,
+};
 
 
 /***/ }),
