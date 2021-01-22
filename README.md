@@ -21,12 +21,36 @@ Each output is a comma-separated string.
 
 ### `refs`
 
-Referenced issue numbers in the same repository.
+Referenced issue numbers in the same repository. Excludes actions such as "Fix" or "Duplicate of".
+
+Output example: `1,2,3`
 
 ### `external_refs`
 
-Referenced issue refs in different repositories.
+Referenced issue refs in different repositories. Excludes actions such as "Fix" or "Duplicate of".
+
+Output example: `octocat/Hello-World#1,octocat/Hello-World#2`
 
 ## Example Usage
 
-TODO:
+```yaml
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  parse-comment:
+    runs-on: ubuntu-latest
+    name: Parse Comment
+    steps:
+      - name: Issue Refs Parser Action
+        uses: FujiHaruka/issue-refs-parser-action@v1.0
+        id: action
+        with:
+          body: ${{ github.event.comment.body }}
+          self_slug: octocat/Hello-World
+      - name: Get The Outputs
+        run: |
+          echo "refs: ${{ steps.action.outputs.refs }}"
+          echo "external_refs: ${{ steps.action.outputs.external_refs }}"
+```
