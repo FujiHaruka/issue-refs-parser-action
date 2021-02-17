@@ -44,7 +44,7 @@ jobs:
     name: Parse Comment
     steps:
       - name: Issue Refs Parser Action
-        uses: FujiHaruka/issue-refs-parser-action@v1.0
+        uses: FujiHaruka/issue-refs-parser-action@v1.1
         id: action
         with:
           body: ${{ github.event.comment.body }}
